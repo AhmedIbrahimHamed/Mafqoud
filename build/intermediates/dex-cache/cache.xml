@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_5a4458c653a815723b7a4e280ff029845389360c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\ef3f2c95e860fbcf9de5f4a68e01aee5cd018d1b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cc348f822cf150c3905da6a230944edb30733caf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\d786f81a0f0511b33ee29502c5c6d061a3a6408a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6cc05668817bde1914e26a60b0a4bd1ca695dd6f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\491e59e781349396ef83bda10ae74622208b1202\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d3132195e87412abdaeb59d9008ab90d820569ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\ddc5389e9e4043db19d53e059a629b1a7d09f9f8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e1efac0cbfd25c41a8397e3c42d8f7f92780af5a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_071b73a831274c79f681784d3243232694bce17d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\7878bda44fae2cc02b9e8877715e46fb43d79afb\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_25c27f6fa5c965334a3f12d59d2f04f8085af3a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\9639f9b3be027ef7f581a2203c130afb8beca41c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f987962fabe0987739f2dea5281459fab9d870f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\3a526afc1a28e620c06c9c68dfd48a4ddaf75f5e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ec9b5884a1a5ba181b81bccf602c61abf0c52797\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\1f45a106ffe5004628428f49a4617d91ae2a29cc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_84b1af71de22f032d9699a6e3581abef6eb11fc8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\5c1a0c9260c6e702e1aa1f8f18871d97cce4cb64\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7bfb43a0e37705e1f07283012588568be2e88588\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\299c00c8b11e10ade5b383e7527b751bd18d30b1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8427eb934ed30001fc1d32609424af910b3f3af3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bdac5cbe7df6bd9d42264b9561f3cc7238678259">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_933046466bcde6f72df59eeba80074d9c32d1e87\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\0567764ccd40f35a7e0f285eb162c8626c88ef1f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eed0bdbb62296bae4a6600d521bf0451e7d4231c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ayyad\.android\build-cache\c2ffc3f7d7bb489dd8df87a0e5cdaf5d5db6bc21\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="C:\Users\ayyad\Desktop\android\Welcome-Back\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_737d86fc1b8d75c51a3473ae7fda867bd6d27fe5\classes.dex" />
+    </item>
+
+</items>
