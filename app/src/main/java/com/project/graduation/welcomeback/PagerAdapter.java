@@ -15,10 +15,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    /** Context of the app */
+    /**
+     * Context of the app
+     */
     private Context mContext;
 
-    public PagerAdapter(FragmentManager fm,Context context) {
+    public PagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         mContext = context;
     }

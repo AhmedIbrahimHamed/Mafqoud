@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 
 /*
  * this screen for show logo and determined go to sign in screen or main screen.
@@ -27,7 +26,9 @@ public class LunchActivity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent signInIntent = new Intent(LunchActivity.this,SignInActivity.class);
+
+                //change intent go to main activity instead of the sign in for test changes I made in Main Activity
+                Intent signInIntent = new Intent(LunchActivity.this,MainActivity.class);
                 LunchActivity.this.startActivity(signInIntent);
                 LunchActivity.this.finish();
             }

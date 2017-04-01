@@ -19,7 +19,49 @@
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.graduation.welcomeback.MainActivity" />
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="Notification"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.graduation.welcomeback.MainActivity" />
+        </activity>
+        <activity
+            android:name=".BetaActivity"
+            android:label="Beta"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.graduation.welcomeback.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="Help"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.graduation.welcomeback.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ContactUsActivity"
+            android:label="Contact Us"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.graduation.welcomeback.MainActivity" />
+        </activity>
+
     </application>
+
 </manifest>
