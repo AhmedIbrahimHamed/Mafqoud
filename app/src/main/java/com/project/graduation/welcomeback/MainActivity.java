@@ -1,11 +1,8 @@
 package com.project.graduation.welcomeback;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,9 +14,13 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_navigation_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,19 +34,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Find the view pager that will allow the user to swipe between fragments
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+         //we are inflating the TabFragment as the first Fragment when we start
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.replace(R.id.containerView, new HomeFragment()).commit();
 
-        // Create an adapter that knows which fragment should be shown on each page
-        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager(),
-                MainActivity.this));
-
-        // Set the adapter onto the view pager
-
-        // Find the tab layout that shows the tabs
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
-
-        tabLayout.setupWithViewPager(viewPager);
 
     }
 
@@ -59,36 +52,40 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
+// handel Item Selected in nav
     private void displaySelectedScreen(int itemId) {
-        Intent intent = null;
         switch (itemId) {
-
-            case R.id.nav_profile:
-                // Handle the camera action
-                intent = new Intent(this, ProfileActivity.class);
-                startActivity(intent);
+            case R.id.nav_Home:
+                FragmentTransaction homeTransaction = mFragmentManager.beginTransaction();
+                homeTransaction.replace(R.id.containerView, new HomeFragment()).commit();
+                setTitle("Home");
                 break;
-            case R.id.nav_notification:
-                intent = new Intent(this, NotificationActivity.class);
-                startActivity(intent);
+            case R.id.nav_profile:
+                FragmentTransaction profileTransaction = mFragmentManager.beginTransaction();
+                profileTransaction.replace(R.id.containerView, new MyProfileFragment()).commit();
+                setTitle("Profile");
                 break;
             case R.id.nav_beta:
-                intent = new Intent(this, BetaActivity.class);
-                startActivity(intent);
+                FragmentTransaction betaTransaction = mFragmentManager.beginTransaction();
+                betaTransaction.replace(R.id.containerView, new BetaFragment()).commit();
+                setTitle("Beta");
+                break;
+            case R.id.nav_notification:
+                FragmentTransaction notificationTransaction = mFragmentManager.beginTransaction();
+                notificationTransaction.replace(R.id.containerView, new NotificationFragment()).commit();
+                setTitle("Notification");
                 break;
             case R.id.nav_help:
-                intent = new Intent(this, HelpActivity.class);
-                startActivity(intent);
+                FragmentTransaction helpTransaction = mFragmentManager.beginTransaction();
+                helpTransaction.replace(R.id.containerView, new HelpFragment()).commit();
+                setTitle("Help");
                 break;
-
             case R.id.nav_contact_us:
-                intent = new Intent(this, ContactUsActivity.class);
-                startActivity(intent);
+                FragmentTransaction contactUsTransaction = mFragmentManager.beginTransaction();
+                contactUsTransaction.replace(R.id.containerView, new ContactUsFragment()).commit();
+                setTitle("Contact Us");
                 break;
-
-            // TODO: Logout 
-
+            // TODO: handel logout
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

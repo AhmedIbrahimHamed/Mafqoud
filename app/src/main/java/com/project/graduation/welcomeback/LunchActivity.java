@@ -1,37 +1,37 @@
 package com.project.graduation.welcomeback;
 
-/**
- * created by: TODO: Enter your name here
- */
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-/*
- * this screen for show logo and determined go to sign in screen or main screen.
- */
+public class LunchActivity extends Activity {
 
-public class LunchActivity extends AppCompatActivity {
+    // Splash screen timer
+    private static int SPLASH_TIME_OUT = 5000;
 
-    private final int LUNCH_DISPLAY_LENGTH = 10000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lunch);
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
-        new Handler().postDelayed(new Runnable(){
+
+        new Handler().postDelayed(new Runnable() {
+
+            /*
+             * Showing splash screen with a timer. This will be useful when you
+             * want to show case your app logo / company
+             */
+
             @Override
             public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
+                // This method will be executed once the timer is over
+                // Start your app main activity
+                Intent i = new Intent(LunchActivity.this, MainActivity.class);
+                startActivity(i);
 
-                //change intent go to main activity instead of the sign in for test changes I made in Main Activity
-                Intent signInIntent = new Intent(LunchActivity.this,MainActivity.class);
-                LunchActivity.this.startActivity(signInIntent);
-                LunchActivity.this.finish();
+                // close this activity
+                finish();
             }
-        }, LUNCH_DISPLAY_LENGTH);
+        }, SPLASH_TIME_OUT);
     }
 }
