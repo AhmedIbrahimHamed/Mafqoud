@@ -17,4 +17,40 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_help">HelpActivity</string>
 
+    <!-- Facebook sign in -->
+    <string name="facebook_app_id">208120906357108</string>
+    <string name="fb_login_protocol_scheme">fb208120906357108</string>
+
+    <!--Log in strings -->
+    <string name="username">Name</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="new_user">New User?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="or">OR</string>
+    <string name="sign_up_with">Sign Up with</string>
+    <string name="sign_in_with">Sign In with</string>
+    <string name="email_already_used">This email is already used.</string>
+    <string name="email_verification_message_body">We send you and Email verify your account with it</string>
+    <string name="email_verification_message_title">Email verification.</string>
+    <string name="email_verification_message_button">OK</string>
+    <string name="password_valid">Password must contains minimum 8 characters</string>
+    <string name="vaild_email">Please Inter Valid Email</string>
+    <string name="valid_username_characters">Username contains only a-z, A-z, 1-9 and underscore</string>
+    <string name="usernamr_valid">Minimum username 4 characters</string>
+    <string name="required">Required.</string>
+    <string name="register_dialog">Registering User...</string>
+    <string name="sign_in_dialog">Singing In...</string>
+    <string name="resend_email">Resend Email</string>
+    <string name="email_not_verified">Email not verified</string>
+    <string name="sign_in_failed">Sign In failed</string>
+    <string name="send_Email_success">Send Email  Success</string>
+    <string name="send_email_failed">Send Email  Failed</string>
+    <string name="cancel">Cancel</string>
+    <string name="conncetion_failed">Connection Failed.</string>
+    <string name="auth_failed">Authentication failed.</string>
+
 </resources>

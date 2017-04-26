@@ -1,5 +1,6 @@
 package com.project.graduation.welcomeback;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,11 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
+
+    private FirebaseAuth mFirebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.containerView, new HomeFragment()).commit();
-
+        mFirebaseAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -85,7 +90,11 @@ public class MainActivity extends AppCompatActivity
                 contactUsTransaction.replace(R.id.containerView, new ContactUsFragment()).commit();
                 setTitle("Contact Us");
                 break;
-            // TODO: handel logout
+            case R.id.nav_logout:
+                mFirebaseAuth.signOut();
+                Intent intent = new Intent(this, SignInActivity.class);
+                startActivity(intent);
+                finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
