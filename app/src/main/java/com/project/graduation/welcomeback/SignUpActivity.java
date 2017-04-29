@@ -6,9 +6,11 @@ package com.project.graduation.welcomeback;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +37,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.ProviderQueryResult;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -55,7 +58,6 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText mEmail;            //email edit text
     private EditText mPassword;         //password edit text
     private Button mSignUpButton;       //sign up button
-    private ImageView mFacebookSignUp;  //facebook sign up method
     private ImageView mGoogleSignUp;    //google sign up method
     private TextView mSignIn;           //go to sign in page
 
@@ -77,7 +79,6 @@ public class SignUpActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.sign_up_email);
         mPassword = (EditText) findViewById(R.id.sign_up_password);
         mSignUpButton = (Button) findViewById(R.id.sign_up_button);
-        mFacebookSignUp = (ImageView) findViewById(R.id.facebook_signup_button);
         mGoogleSignUp = (ImageView) findViewById(R.id.google_signup_button);
         mSignIn = (TextView) findViewById(R.id.go_to_sign_in);
 
@@ -102,6 +103,11 @@ public class SignUpActivity extends AppCompatActivity {
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (!isNetworkConnected()) {
+                    Toast.makeText(SignUpActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 //check the validation of the username, email, password.
                 if (!validate()) {
@@ -133,6 +139,12 @@ public class SignUpActivity extends AppCompatActivity {
         mGoogleSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (!isNetworkConnected()) {
+                    Toast.makeText(SignUpActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 mProgressDialog.show();
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
                 startActivityForResult(signInIntent, RC_SIGN_UP);
@@ -191,10 +203,12 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         mProgressDialog.dismiss();
                         if (task.isSuccessful()) {
+                            String username = mUsername.getText().toString().trim();
                             // if sign up successfull send email verification, sign out,
                             // show infromation to user, then go to sign in activity.
                             mFirebaseAuth.getCurrentUser().sendEmailVerification();
-                            String username = mUsername.getText().toString().trim();
+                            mFirebaseAuth.getCurrentUser().updateProfile(new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(username).build());
                             saveUserData(username);
                             mFirebaseAuth.signOut();
 
@@ -227,7 +241,7 @@ public class SignUpActivity extends AppCompatActivity {
                                                 } else {
                                                     Toast.makeText(SignUpActivity.this, "Sign Up failed.", Toast.LENGTH_SHORT).show();
                                                 }
-                                            } 
+                                            }
                                         }
                                     });
                         }
@@ -275,6 +289,7 @@ public class SignUpActivity extends AppCompatActivity {
             } else {
                 // Google Sign In failed, update UI appropriately
                 // ...
+                mProgressDialog.dismiss();
             }
         }
     }
@@ -286,23 +301,28 @@ public class SignUpActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        mProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
 
                             saveUserData(account.getDisplayName());
+                            mProgressDialog.dismiss();
                             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
+                            mProgressDialog.dismiss();
                             Toast.makeText(SignUpActivity.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
                         }
-
-                        // ...
                     }
                 });
+
+    }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
     }
 }

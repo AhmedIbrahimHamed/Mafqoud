@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LunchActivity extends Activity {
 
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 2000;
+    private static int SPLASH_TIME_OUT = 800;
     private FirebaseAuth mFirebaseAuth; // firebase authintication.
 
 

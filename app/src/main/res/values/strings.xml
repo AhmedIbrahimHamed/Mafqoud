@@ -52,5 +52,9 @@
     <string name="cancel">Cancel</string>
     <string name="conncetion_failed">Connection Failed.</string>
     <string name="auth_failed">Authentication failed.</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="enter_email_here">Enter your Email Here</string>
+    <string name="reset_password_title">Reset Password</string>
+    <string name="reset_password_button">Reset</string>
 
 </resources>

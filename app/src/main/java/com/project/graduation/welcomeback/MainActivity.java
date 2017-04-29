@@ -10,9 +10,24 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.HeaderViewListAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import static android.R.attr.id;
+import static android.R.attr.name;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,6 +36,10 @@ public class MainActivity extends AppCompatActivity
     FragmentTransaction mFragmentTransaction;
 
     private FirebaseAuth mFirebaseAuth;
+    private TextView mName;
+    private TextView mEmail;
+    private FirebaseUser mUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +51,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
@@ -39,12 +59,30 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-         //we are inflating the TabFragment as the first Fragment when we start
+        //we are inflating the TabFragment as the first Fragment when we start
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.containerView, new HomeFragment()).commit();
         mFirebaseAuth = FirebaseAuth.getInstance();
 
+        View header = navigationView.getHeaderView(0);
+
+
+        mName = (TextView) header.findViewById(R.id.username_drawer);
+        mEmail = (TextView) header.findViewById(R.id.email_drawer);
+
+
+
+        mUser = mFirebaseAuth.getCurrentUser();
+
+
+        String email = mUser.getEmail();
+        String name = mUser.getDisplayName();
+        //update name and email of the drawer by the current user information
+
+
+        mEmail.setText(email);
+        mName.setText(name);
     }
 
     @Override
@@ -57,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-// handel Item Selected in nav
+    // handel Item Selected in nav
     private void displaySelectedScreen(int itemId) {
         switch (itemId) {
             case R.id.nav_Home:

@@ -18,6 +18,10 @@ public class User {
     private List<String> mMissingReportsRefrences; // the user's missings reports refrences that s/he made.
     private List<String> mSuspectsReportsRefrences; // the user's suspects reports refrences that s/he made.
 
+    public User() {
+
+    }
+
     /**
      * the first constructor of the user class
      * @param name the name of the current user

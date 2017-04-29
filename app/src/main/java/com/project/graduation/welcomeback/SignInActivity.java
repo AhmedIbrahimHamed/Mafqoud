@@ -6,8 +6,10 @@ package com.project.graduation.welcomeback;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -53,7 +55,6 @@ public class SignInActivity extends AppCompatActivity {
     private EditText mPassword;         //password edit text
 
     private Button mSignInButton;       //sign in button
-    private ImageView mFacebookSignIn;  //facebook sign in method
     private ImageView mGoogleSignIn;    //google sign in method
     private TextView mForgetPassword;  // for send forget password email
 
@@ -74,7 +75,6 @@ public class SignInActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.sign_in_email);
         mPassword = (EditText) findViewById(R.id.sign_in_password);
         mSignInButton = (Button) findViewById(R.id.sign_in_button);
-        mFacebookSignIn = (ImageView) findViewById(R.id.facebook_login_button);
         mGoogleSignIn = (ImageView) findViewById(R.id.google_login_button);
         mForgetPassword = (TextView) findViewById(R.id.forget_password);
 
@@ -100,6 +100,11 @@ public class SignInActivity extends AppCompatActivity {
         mSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //check intener connection
+                if (!isNetworkConnected()) {
+                    Toast.makeText(SignInActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 //check the validation of the email, password.
                 if (!validate()) {
                     return;
@@ -114,6 +119,11 @@ public class SignInActivity extends AppCompatActivity {
         mForgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!isNetworkConnected()) {
+                    Toast.makeText(SignInActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 final EditText input = new EditText(SignInActivity.this);
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
@@ -124,9 +134,9 @@ public class SignInActivity extends AppCompatActivity {
                         InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(SignInActivity.this);
-                builder.setMessage("Enter your Email Here")
-                        .setTitle("Reset Password");
-                builder.setPositiveButton("Reset",
+                builder.setMessage(R.string.enter_email_here)
+                        .setTitle(R.string.reset_password_title);
+                builder.setPositiveButton(R.string.reset_password_button,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 String email = input.getText().toString().trim();
@@ -180,6 +190,12 @@ public class SignInActivity extends AppCompatActivity {
         mGoogleSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (!isNetworkConnected()) {
+                    Toast.makeText(SignInActivity.this, R.string.no_internet, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 mProgressDialog.show();
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
                 startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -246,6 +262,7 @@ public class SignInActivity extends AppCompatActivity {
                             }
                         } else {
                             Toast.makeText(SignInActivity.this, R.string.sign_in_failed, Toast.LENGTH_SHORT).show();
+                            mProgressDialog.dismiss();
                         }
                     }
                 });
@@ -284,6 +301,7 @@ public class SignInActivity extends AppCompatActivity {
             } else {
                 // Google Sign In failed, update UI appropriately
                 // ...
+                mProgressDialog.dismiss();
             }
         }
     }
@@ -295,10 +313,9 @@ public class SignInActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        mProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            mProgressDialog.dismiss();
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -306,10 +323,16 @@ public class SignInActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(SignInActivity.this, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
+                            mProgressDialog.dismiss();
                         }
-
                         // ...
                     }
                 });
+    }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
     }
 }
