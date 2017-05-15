@@ -56,5 +56,28 @@
     <string name="enter_email_here">Enter your Email Here</string>
     <string name="reset_password_title">Reset Password</string>
     <string name="reset_password_button">Reset</string>
+    <string name="title_activity_report_missing">ReportMissing</string>
+
+    <!--Report Missing First step strings -->
+    <string name="name_text">Name :</string>
+    <string name="name_hint">Enter Full Name..</string>
+    <string name="age_text">Age :</string>
+    <string name="age_hint">Enter Age..</string>
+    <string name="gender_text">Gender :</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+
+    <!-- Report Missing Second step Strings -->
+
+    <string name="location_text">Location :</string>
+    <string name="location_hint">Last Seen Location..</string>
+    <string name="more_info_text">More info :</string>
+    <string name="more_info_hint">More info on the missing.. </string>
+    <string name="contact_info_text">Contact Info :</string>
+    <string name="contact_info_hint">Enter Contact info</string>
+
+    <!--Report Missing third step strings-->
+    <string name="description">Please upload a photo of him or her.</string>
+    <string name="missing_step3_notes">Note: Photo shouldn\'t contain more than one face.</string>
 
 </resources>

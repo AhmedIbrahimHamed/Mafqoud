@@ -15,19 +15,27 @@
     <dimen name="margin_or_line">10dp</dimen>
     <dimen name="soical_margin">8dp</dimen>
 
-    <!--<dimen name="logo_height_spacing">100dp</dimen>-->
-    <!--<dimen name="logo_width_spacing">100dp</dimen>-->
-    <!--<dimen name="left_margin_username_password_sign_in">40dp</dimen>-->
-    <!--<dimen name="username_top_margin">90dp</dimen>-->
-    <!--<dimen name="username_bottom_margin">10dp</dimen>-->
-    <!--<dimen name="password_top_margin">10dp</dimen>-->
-    <!--<dimen name="password_bottom_margin">10dp</dimen>-->
-    <!--<dimen name="sign_in_button_top_margin">30dp</dimen>-->
-    <!--<dimen name="forgot_password_top_margin">10dp</dimen>-->
-    <!--<dimen name="OR_line_top_margin">30dp</dimen>-->
-    <!--<dimen name="OR_line_bottom_margin">15dp</dimen>-->
-    <!--<dimen name="ic_social_account_width">30dp</dimen>-->
-    <!--<dimen name="ic_social_account_height">30dp</dimen>-->
+    <!--Report missing First step dimens -->
+
+    <dimen name="fragment_first_step_width">220dp</dimen>
+    <dimen name="fragment_first_step_marginLeft">16dp</dimen>
+    <dimen name="fragment_first_step_name_marginTop">100dp</dimen>
+    <dimen name="fragment_first_step_marginTop">60dp</dimen>
+    <dimen name="fragment_first_step_gender_textSize">20dp</dimen>
+    <dimen name="fragment_first_step_radioFemale_marginRight">8dp</dimen>
+    <dimen name="fragment_first_step_editText_marginLeft">16dp</dimen>
+
+    <!-- Report missing Second step dimens -->
+
+    <dimen name="fragment_second_step_width">220dp</dimen>
+    <dimen name="fragment_second_step_marginLeft">16dp</dimen>
+    <dimen name="fragment_second_step_name_marginTop">100dp</dimen>
+    <dimen name="fragment_second_step_marginTop">60dp</dimen>
+    <dimen name="fragment_second_step_gender_textSize">20dp</dimen>
+    <dimen name="fragment_second_step_editText_height">100dp</dimen>
+
+    <!--Report missing third step dimens-->
+    <dimen name="fragment_third_step_image_width_height">150dp</dimen>
 
 
 </resources>
