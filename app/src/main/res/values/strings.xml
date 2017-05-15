@@ -57,4 +57,15 @@
     <string name="reset_password_title">Reset Password</string>
     <string name="reset_password_button">Reset</string>
 
+    <!-- help activiy -->
+    <string name="help_massege">If you lost your dear ones don`t worry,</string>
+    <string name="how_to_use_app">just upload the photo and few details of the person and our powerful face recognition API will find out the person
+if the person is already in our database or we will notify you once the person is found.</string>
+    <string name="help_suspect">If you find someone and think that s/he is the missing person,</string>
+    <string name="help_upload">you can upload the photo on Welcome Back so that reunite the missing person to his/her dear ones.</string>
+    <string name="help_better_result">For better results</string>
+    <string name="first_result">1. take image from some distance</string>
+    <string name="second_result">2. there shouldn\'t be more then one face in the image </string>
+    <string name="how_use_welcome_back">How use Welcome Back?</string>
+
 </resources>

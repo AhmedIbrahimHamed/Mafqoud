@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity
         mEmail = (TextView) header.findViewById(R.id.email_drawer);
 
 
-
         mUser = mFirebaseAuth.getCurrentUser();
 
 
@@ -103,16 +102,7 @@ public class MainActivity extends AppCompatActivity
                 homeTransaction.replace(R.id.containerView, new HomeFragment()).commit();
                 setTitle("Home");
                 break;
-            case R.id.nav_profile:
-                FragmentTransaction profileTransaction = mFragmentManager.beginTransaction();
-                profileTransaction.replace(R.id.containerView, new MyProfileFragment()).commit();
-                setTitle("Profile");
-                break;
-            case R.id.nav_beta:
-                FragmentTransaction betaTransaction = mFragmentManager.beginTransaction();
-                betaTransaction.replace(R.id.containerView, new BetaFragment()).commit();
-                setTitle("Beta");
-                break;
+
             case R.id.nav_notification:
                 FragmentTransaction notificationTransaction = mFragmentManager.beginTransaction();
                 notificationTransaction.replace(R.id.containerView, new NotificationFragment()).commit();
