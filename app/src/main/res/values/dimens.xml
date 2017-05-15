@@ -14,6 +14,7 @@
 
     <dimen name="margin_or_line">10dp</dimen>
     <dimen name="soical_margin">8dp</dimen>
+    <dimen name="title_size">25sp</dimen>
 
     <!--Report missing First step dimens -->
 
