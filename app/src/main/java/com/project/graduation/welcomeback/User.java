@@ -1,10 +1,14 @@
 package com.project.graduation.welcomeback;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import static android.R.attr.author;
 import static com.project.graduation.welcomeback.R.string.email;
 
 /**
@@ -15,8 +19,8 @@ import static com.project.graduation.welcomeback.R.string.email;
 public class User {
     private String mName;          //the name of the user
 
-    private List<String> mMissingReportsRefrences; // the user's missings reports refrences that s/he made.
-    private List<String> mSuspectsReportsRefrences; // the user's suspects reports refrences that s/he made.
+    private List<String> mMissingReportsRefrences = new ArrayList<>(); // the user's missings reports refrences that s/he made.
+    private List<String> mSuspectsReportsRefrences = new ArrayList<>(); // the user's suspects reports refrences that s/he made.
 
     public User() {
 
@@ -71,4 +75,22 @@ public class User {
     public void setmSuspectsReportsRefrences(List<String> mSuspectsReportsRefrences) {
         this.mSuspectsReportsRefrences = mSuspectsReportsRefrences;
     }
+
+    public void addSuspect(String report) {
+        mSuspectsReportsRefrences.add(report);
+    }
+
+    public void addMissing(String report) {
+        mMissingReportsRefrences.add(report);
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("mName", mName);
+        result.put("mMissingReportsRefrences", mMissingReportsRefrences);
+        result.put("mSuspectsReportsRefrences", mSuspectsReportsRefrences);
+        return result;
+    }
+
 }
