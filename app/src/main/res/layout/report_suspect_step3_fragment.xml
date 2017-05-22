@@ -4,14 +4,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/missing_step3_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/description"
         android:textSize="@dimen/fragment_second_step_gender_textSize"/>
-    
+
     <ImageView
-        android:id="@+id/missing_step3_image"
+        android:id="@+id/suspect_step3_image"
         android:layout_width="@dimen/fragment_third_step_image_width_height"
         android:layout_height="@dimen/fragment_third_step_image_width_height"
         android:src="@android:drawable/ic_menu_upload"

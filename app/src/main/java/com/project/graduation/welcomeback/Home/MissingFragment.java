@@ -23,8 +23,6 @@ public class MissingFragment extends Fragment  {
 
     private FloatingActionButton mFloatingActionButton; //used to add reports
 
-    private static final int REPORT_MISSING_CD = 1;        //used to identify the request code;
-
     public MissingFragment() {
         // Required empty public constructor
     }

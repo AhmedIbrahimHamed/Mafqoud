@@ -85,14 +85,14 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radio_male"
+                android:id="@+id/missing_radio_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/radio_male"
                 android:checked="true"/>
 
             <RadioButton
-                android:id="@+id/radio_female"
+                android:id="@+id/missing_radio_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/fragment_first_step_radioFemale_marginRight"

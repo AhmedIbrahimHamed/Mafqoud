@@ -12,9 +12,6 @@
         android:orientation="vertical"
         tools:context="com.example.android.form.MainActivity">
 
-
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +20,6 @@
             <!-- First Row -->
 
             <TextView
-                android:id="@+id/location_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/fragment_second_step_marginLeft"
@@ -32,7 +28,7 @@
                 android:textSize="@dimen/fragment_first_step_gender_textSize"/>
 
             <EditText
-                android:id="@+id/missing_step2_location_editText"
+                android:id="@+id/suspect_step2_location_editText"
                 android:layout_width="@dimen/fragment_second_step_width"
                 android:layout_height="@dimen/fragment_second_step_editText_height"
                 android:layout_marginTop="@dimen/fragment_second_step_marginTop"
@@ -47,7 +43,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/missing_step2_moreInfo_textView"
+                android:id="@+id/suspect_step2_moreInfo_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/fragment_second_step_marginLeft"
@@ -56,7 +52,7 @@
                 android:textSize="@dimen/fragment_first_step_gender_textSize"/>
 
             <EditText
-                android:id="@+id/missing_step2_moreInfo_editText"
+                android:id="@+id/suspect_step2_moreInfo_editText"
                 android:layout_width="@dimen/fragment_first_step_width"
                 android:layout_height="@dimen/fragment_second_step_editText_height"
                 android:layout_marginTop="@dimen/fragment_second_step_marginTop"
@@ -79,7 +75,7 @@
                 android:textSize="@dimen/fragment_first_step_gender_textSize"/>
 
             <EditText
-                android:id="@+id/missing_step2_contact_info_editText"
+                android:id="@+id/suspect_step2_contact_info_editText"
                 android:layout_width="@dimen/fragment_second_step_width"
                 android:layout_height="@dimen/fragment_second_step_marginTop"
                 android:layout_marginLeft="@dimen/fragment_first_step_editText_marginLeft"

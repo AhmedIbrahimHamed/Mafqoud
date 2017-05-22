@@ -1,34 +1,49 @@
 package com.project.graduation.welcomeback.Home.Data;
 
 
+import com.firebase.client.core.Repo;
+
+import java.util.ArrayList;
+
 /**
  * Created by Ahmed on 5/5/2017.
  */
 
 public class Report {
 
-    private String photo;       //Photo of suspect/missing.
-    private String name;        //Name of suspect/missing.
-    private String age;            //Age of suspect/missing.
-    private String gender;      //Gender of suspect/missing.
-    private String location;    //Location of suspect/missing when they were seen/lost.
-    private String moreInfo;    //Any additional info the reporter want to add.
-    private String contactInfo; //Contact Information for the reporter to get back to.
+    private String photoUrl;         //Photo URL of the suspect/missing.
+    private String name;            //Name of suspect/missing.
+    private String age;             //Age of suspect/missing.
+    private String gender;          //Gender of suspect/missing.
+    private String location;        //Location of suspect/missing when they were seen/lost.
+    private String moreInfo;        //Any additional info the reporter want to add.
+    private String contactInfo;     //Contact Information for the reporter to get back to.
 
     //empty constructor
     public Report(){
 
     }
 
+    public Report(ArrayList<String> reportInfo){
+        this.name = reportInfo.get(0);
+        this.age = reportInfo.get(1);
+        this.gender = reportInfo.get(2);
+        this.location = reportInfo.get(3);
+        this.contactInfo = reportInfo.get(4);
+        this.moreInfo = reportInfo.get(5);
+        this.photoUrl = reportInfo.get(6);
+    }
+
     //full constructor
     public Report(String photo, String name, String age, String gender, String location,
-                  String time, String moreInfo){
-        this.photo = photo;
+                  String moreInfo,String contactInfo){
+        this.photoUrl = photo;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.location = location;
         this.moreInfo = moreInfo;
+        this.contactInfo = contactInfo;
     }
 
 
@@ -41,11 +56,11 @@ public class Report {
     }
 
     public String getPhoto() {
-        return photo;
+        return photoUrl;
     }
 
     public void setPhoto(String photo) {
-        this.photo = photo;
+        this.photoUrl = photo;
     }
 
     public String getAge() {

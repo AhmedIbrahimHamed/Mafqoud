@@ -1,8 +1,8 @@
 package com.project.graduation.welcomeback.Home.MissingStepper;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,7 +13,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.project.graduation.welcomeback.Home.Data.DataManger;
+import com.project.graduation.welcomeback.Home.Data.Report;
 import com.project.graduation.welcomeback.R;
 import com.squareup.picasso.Picasso;
 import com.stepstone.stepper.BlockingStep;
@@ -28,13 +35,19 @@ import static android.app.Activity.RESULT_OK;
  * Created by Ahmed on 5/15/2017.
  */
 
-public class ReportMissingStep3  extends Fragment implements BlockingStep,View.OnClickListener {
+public class ReportMissingStep3 extends Fragment implements BlockingStep,View.OnClickListener {
 
     private View view;
 
     private DataManger mDataManager;
 
-    private String mLocation,mContact,mMoreInfo;
+    private FirebaseDatabase mFirebaseDatabase;
+
+    private DatabaseReference mReportDatabaseReference;
+
+    private FirebaseStorage mFirebaseStorage;
+
+    private StorageReference mReportPhotosStorageReference;
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
@@ -68,6 +81,11 @@ public class ReportMissingStep3  extends Fragment implements BlockingStep,View.O
         mImageView.setOnClickListener(this);
         mDataManager= (DataManger) getActivity();
 
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mFirebaseStorage = FirebaseStorage.getInstance();
+        mReportDatabaseReference = mFirebaseDatabase.getReference().child("reports").child("missing_reports");
+        mReportPhotosStorageReference = mFirebaseStorage.getReference().child("reports_photos").child("missing_photos");
+
         return view;
     }
 
@@ -84,11 +102,27 @@ public class ReportMissingStep3  extends Fragment implements BlockingStep,View.O
     @Override
     public void onCompleteClicked(StepperLayout.OnCompleteClickedCallback callback) {
         callback.complete();
+        StorageReference photoRef = mReportPhotosStorageReference
+                .child(mSelectedImage.getLastPathSegment());
+        photoRef.putFile(mSelectedImage).addOnSuccessListener((Activity) getContext(), new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Uri photoUrlDownload = taskSnapshot.getDownloadUrl();
+                mReportArrayList.add(6,photoUrlDownload.toString());
+                Report mReport = new Report(mReportArrayList);
+                mReportDatabaseReference.push().setValue(mReport);
+                //TODO: add ur test here.
+
+
+                getActivity().finish();
+            }
+        });
     }
 
     @Override
     public void onNextClicked(StepperLayout.OnNextClickedCallback callback) {
-        Toast.makeText(getActivity(),"sdasa",Toast.LENGTH_LONG).show();
+
+
 
     }
 
@@ -113,7 +147,7 @@ public class ReportMissingStep3  extends Fragment implements BlockingStep,View.O
 
     @Override
     public void onError(@NonNull VerificationError error) {
-        Toast.makeText(getActivity(),error.getErrorMessage(),Toast.LENGTH_LONG);
+        Toast.makeText(getActivity(),error.getErrorMessage(),Toast.LENGTH_LONG).show();
     }
 
     @Override

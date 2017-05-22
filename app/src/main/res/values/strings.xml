@@ -78,7 +78,7 @@
 
     <!--Report Missing third step strings-->
     <string name="description">Please upload a photo of him or her.</string>
-    <string name="missing_step3_notes">Note: Photo shouldn\'t contain more than one face.</string>
+    <string name="step3_notes">Note: Photo shouldn\'t contain more than one face.</string>
 
     <!-- help activiy -->
     <string name="help_massege">If you lost your dear ones don`t worry,</string>
