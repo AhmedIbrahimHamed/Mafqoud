@@ -21,6 +21,7 @@ public class User {
 
     private List<String> mMissingReportsRefrences = new ArrayList<>(); // the user's missings reports refrences that s/he made.
     private List<String> mSuspectsReportsRefrences = new ArrayList<>(); // the user's suspects reports refrences that s/he made.
+    private List<String> mNotifications = new ArrayList<>();
 
     public User() {
 
@@ -33,11 +34,12 @@ public class User {
      * @param suspectsReportsRefrences the missing reports references that current user made.
      **/
     public User(String name, List<String> missingReportsRefrences,
-                List<String> suspectsReportsRefrences) {
+                List<String> suspectsReportsRefrences, List<String> notifications) {
         mName = name;
 
         mMissingReportsRefrences = missingReportsRefrences;
         mSuspectsReportsRefrences = suspectsReportsRefrences;
+        mNotifications = notifications;
     }
 
     /**
@@ -48,12 +50,21 @@ public class User {
         mName = name;
         mMissingReportsRefrences = new ArrayList<>();
         mSuspectsReportsRefrences = new ArrayList<>();
+        mNotifications = new ArrayList<>();
     }
 
     /** getters and setters methods for the class fields. **/
 
     public String getmName() {
         return mName;
+    }
+
+    public List<String> getmNotifications() {
+        return mNotifications;
+    }
+
+    public void setmNotifications(List<String> mNotifications) {
+        this.mNotifications = mNotifications;
     }
 
     public void setmName(String name) {
