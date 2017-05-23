@@ -14,14 +14,20 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.project.graduation.welcomeback.Home.Data.DataManger;
 import com.project.graduation.welcomeback.Home.Data.Report;
 import com.project.graduation.welcomeback.R;
+import com.project.graduation.welcomeback.User;
+import com.project.graduation.welcomeback.Utilities;
 import com.squareup.picasso.Picasso;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
@@ -29,13 +35,14 @@ import com.stepstone.stepper.VerificationError;
 
 import java.util.ArrayList;
 
+import static android.R.attr.key;
 import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by Ahmed on 5/15/2017.
  */
 
-public class ReportMissingStep3 extends Fragment implements BlockingStep,View.OnClickListener {
+public class ReportMissingStep3 extends Fragment implements BlockingStep, View.OnClickListener {
 
     private View view;
 
@@ -57,7 +64,7 @@ public class ReportMissingStep3 extends Fragment implements BlockingStep,View.On
 
     private ImageView mImageView;
 
-    public static ReportMissingStep3 newInstance(){
+    public static ReportMissingStep3 newInstance() {
         return new ReportMissingStep3();
     }
 
@@ -69,17 +76,17 @@ public class ReportMissingStep3 extends Fragment implements BlockingStep,View.On
 
             Picasso.with(getContext())
                     .load(mSelectedImage)
-                    .resize(150,150)
+                    .resize(150, 150)
                     .into(mImageView);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.report_missing_step3_fragment,container,false);
+        view = inflater.inflate(R.layout.report_missing_step3_fragment, container, false);
         mImageView = (ImageView) view.findViewById(R.id.missing_step3_image);
         mImageView.setOnClickListener(this);
-        mDataManager= (DataManger) getActivity();
+        mDataManager = (DataManger) getActivity();
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseStorage = FirebaseStorage.getInstance();
@@ -107,11 +114,32 @@ public class ReportMissingStep3 extends Fragment implements BlockingStep,View.On
         photoRef.putFile(mSelectedImage).addOnSuccessListener((Activity) getContext(), new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Uri photoUrlDownload = taskSnapshot.getDownloadUrl();
-                mReportArrayList.add(6,photoUrlDownload.toString());
+                final Uri photoUrlDownload = taskSnapshot.getDownloadUrl();
+                mReportArrayList.add(6, photoUrlDownload.toString());
                 Report mReport = new Report(mReportArrayList);
-                mReportDatabaseReference.push().setValue(mReport);
+                final DatabaseReference key = mReportDatabaseReference.push();
+                key.setValue(mReport);
                 //TODO: add ur test here.
+
+                final FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+
+                mFirebaseDatabase.getReference().child("Users")
+                        .child(mFirebaseAuth.getCurrentUser().getUid())
+                        .addListenerForSingleValueEvent
+                                (new ValueEventListener() {
+                                     @Override
+                                     public void onDataChange(DataSnapshot dataSnapshot) {
+                                         User user = dataSnapshot.getValue(User.class);
+                                         user.addMissing(key.toString());
+                                         mFirebaseDatabase.getReference().child("Users").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(user);
+                                     }
+
+                                     @Override
+                                     public void onCancelled(DatabaseError databaseError) {
+
+                                     }
+                                 }
+                                );
 
 
                 getActivity().finish();
@@ -123,7 +151,6 @@ public class ReportMissingStep3 extends Fragment implements BlockingStep,View.On
     public void onNextClicked(StepperLayout.OnNextClickedCallback callback) {
 
 
-
     }
 
     @Override
@@ -133,7 +160,7 @@ public class ReportMissingStep3 extends Fragment implements BlockingStep,View.On
 
     @Override
     public VerificationError verifyStep() {
-        if(mSelectedImage == null){
+        if (mSelectedImage == null) {
             return new VerificationError("Please select a photo of the missing person.");
         }
 
@@ -147,7 +174,7 @@ public class ReportMissingStep3 extends Fragment implements BlockingStep,View.On
 
     @Override
     public void onError(@NonNull VerificationError error) {
-        Toast.makeText(getActivity(),error.getErrorMessage(),Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), error.getErrorMessage(), Toast.LENGTH_LONG).show();
     }
 
     @Override

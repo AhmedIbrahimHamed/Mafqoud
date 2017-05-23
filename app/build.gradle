@@ -50,6 +50,8 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:4.22.0'
     //dependency for picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.evernote:android-job:1.1.7'
+
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -17,6 +17,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.evernote.android.job.JobManager;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        JobManager.create(this).addJobCreator(new NotificationJobCreator());
+        NotificationJob.schedulePeriodic();
+
 
         setContentView(R.layout.activity_navigation_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

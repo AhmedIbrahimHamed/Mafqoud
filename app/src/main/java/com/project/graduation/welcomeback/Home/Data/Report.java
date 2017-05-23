@@ -18,7 +18,7 @@ public class Report {
     private String location;        //Location of suspect/missing when they were seen/lost.
     private String moreInfo;        //Any additional info the reporter want to add.
     private String contactInfo;     //Contact Information for the reporter to get back to.
-    private Boolean found;          //Used to identify if the photo is found or not
+    private boolean found;          //Used to identify if the photo is found or not
 
     //empty constructor
     public Report(){
@@ -46,6 +46,7 @@ public class Report {
         this.location = location;
         this.moreInfo = moreInfo;
         this.contactInfo = contactInfo;
+        this.found = false;
     }
 
 
@@ -105,11 +106,11 @@ public class Report {
         this.contactInfo = contactInfo;
     }
 
-    public Boolean getFound() {
+    public boolean isFound() {
         return found;
     }
 
-    public void setFound(Boolean found) {
-        found = found;
+    public void setFound(boolean found) {
+        this.found = found;
     }
 }

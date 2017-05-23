@@ -34,14 +34,19 @@ import com.project.graduation.welcomeback.Home.Data.Report;
 import com.project.graduation.welcomeback.Home.MissingStepper.ReportMissingStep3;
 import com.project.graduation.welcomeback.R;
 import com.project.graduation.welcomeback.User;
+import com.project.graduation.welcomeback.Utilities;
 import com.squareup.picasso.Picasso;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.attr.path;
+import static android.R.attr.x;
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -129,8 +134,19 @@ public class ReportSuspectStep3 extends Fragment implements BlockingStep, View.O
                 final DatabaseReference key = mReportDatabaseReference.push();
                 key.setValue(mReport);
 
-                //TODO: add ur test here.
 
+                URI uri = null;
+                try {
+                    uri = new URI(key.toString());
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+                String path = uri.getPath();
+                String reportRef = path.substring(path.lastIndexOf('/') + 2);
+                Log.i("ImageId", reportRef);
+                Utilities.enrollImageToKairosFoundGallery(getContext(), photoUrlDownload.toString(),reportRef.toString());
+
+                //TODO: add ur test here.
                 getActivity().finish();
 
                 mFirebaseAuth = FirebaseAuth.getInstance();
@@ -143,12 +159,7 @@ public class ReportSuspectStep3 extends Fragment implements BlockingStep, View.O
                                      public void onDataChange(DataSnapshot dataSnapshot) {
                                          User user = dataSnapshot.getValue(User.class);
                                          user.addSuspect(key.toString());
-
-                                         Log.e("sss", user.getmName());
-
-
                                          mFirebaseDatabase.getReference().child("Users").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(user);
-
                                      }
 
                                      @Override
