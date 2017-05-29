@@ -80,15 +80,30 @@
     <string name="description">Please upload a photo of him or her.</string>
     <string name="step3_notes">Note: Photo shouldn\'t contain more than one face.</string>
 
-    <!-- help activiy -->
+    <!--Report Details activity strings-->
+    <string name="report_details_activity_label">Report Details</string>
+    <string name="report_details_name">Name : </string>
+    <string name="report_details_age">Age : </string>
+    <string name="report_details_gender">Gender : </string>
+    <string name="report_details_location">Location : </string>
+    <string name="report_details_contatct_info">Contact Info : </string>
+    <string name="report_details_more_info">More Info : </string>
+    <string name="report_details_unknown_field">N/A</string>
+    <string name="report_details_unknown_more_info">There is no Info.</string>
+
+    <!-- help activity -->
     <string name="help_massege">If you lost your dear ones don`t worry,</string>
     <string name="how_to_use_app">just upload the photo and few details of the person and our powerful face recognition API will find out the person
-if the person is already in our database or we will notify you once the person is found.</string>
+    if the person is already in our database or we will notify you once the person is found.</string>
     <string name="help_suspect">If you find someone and think that s/he is the missing person,</string>
     <string name="help_upload">you can upload the photo on Welcome Back so that reunite the missing person to his/her dear ones.</string>
     <string name="help_better_result">For better results</string>
     <string name="first_result">1. take image from some distance</string>
     <string name="second_result">2. there shouldn\'t be more then one face in the image </string>
     <string name="how_use_welcome_back">How use Welcome Back?</string>
+
+    <!--Gallery_fragment_strings-->
+    <string name="gallery_fragment_switch_suspects_text">Suspects</string>
+    <string name="gallery_fragment_switch_missing_text">Missing</string>
 
 </resources>

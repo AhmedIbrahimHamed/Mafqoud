@@ -39,10 +39,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home.MissingStepper.ReportMissingStepper"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".Home.SuspectStepper.ReportSuspectStepper"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Home.MissingStepper.ReportMissingStepper"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Home.SuspectStepper.ReportSuspectStepper"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Home.ReportDetailsActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/report_details_activity_label"></activity>
     </application>
 
 </manifest>

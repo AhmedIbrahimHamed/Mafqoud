@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_report_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.project.graduation.welcomeback.Home.ReportDetailsActivity">
+
+
+    <ImageView
+        android:id="@+id/report_details_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="@dimen/report_details_image_padding_top"
+        android:paddingBottom="@dimen/report_details_image_padding_bottom"/>
+
+    <TextView
+        android:id="@+id/report_details_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_details_name"
+        style="@style/ReportDetailsTextStyle"/>
+
+    <TextView
+        android:id="@+id/report_details_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_details_age"
+        style="@style/ReportDetailsTextStyle"/>
+
+    <TextView
+        android:id="@+id/report_details_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_details_gender"
+        style="@style/ReportDetailsTextStyle"/>
+
+    <TextView
+        android:id="@+id/report_details_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_details_location"
+        style="@style/ReportDetailsTextStyle"/>
+
+    <TextView
+        android:id="@+id/report_details_contact_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_details_contatct_info"
+        style="@style/ReportDetailsTextStyle"/>
+
+    <TextView
+        android:id="@+id/report_details_more_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_details_more_info"
+        style="@style/ReportDetailsTextStyle"/>
+
+
+</LinearLayout>
+
+</ScrollView>

@@ -38,5 +38,17 @@
     <!--Report missing third step dimens-->
     <dimen name="fragment_third_step_image_width_height">150dp</dimen>
 
+    <!--Gallery photo dimen-->
+    <dimen name="gallery_photo_padding">8dp</dimen>
+
+    <!--Report Details dimens-->
+    <dimen name="report_details_image_padding_top">18dp</dimen>
+    <dimen name="report_details_image_padding_bottom">24dp</dimen>
+    
+    <!--Gallery fragment dimens-->
+    <dimen name="gallery_fragment_margin_top">16dp</dimen>
+    <dimen name="gallery_fragment_switch_margin_left_right">16dp</dimen>
+    <dimen name="gallery_fragment_margin_bottom">24dp</dimen>
+    <dimen name="gallery_fragment_text_size">20sp</dimen>
 
 </resources>

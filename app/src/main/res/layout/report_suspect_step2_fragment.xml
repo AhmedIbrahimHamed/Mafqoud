@@ -57,7 +57,7 @@
                 android:layout_height="@dimen/fragment_second_step_editText_height"
                 android:layout_marginTop="@dimen/fragment_second_step_marginTop"
                 android:hint="@string/more_info_hint"
-                android:inputType="text" />
+                android:inputType="textCapSentences|textMultiLine" />
 
         </LinearLayout>
 
@@ -80,7 +80,8 @@
                 android:layout_height="@dimen/fragment_second_step_marginTop"
                 android:layout_marginLeft="@dimen/fragment_first_step_editText_marginLeft"
                 android:layout_marginTop="@dimen/fragment_first_step_marginTop"
-                android:hint="@string/contact_info_hint"/>
+                android:hint="@string/contact_info_hint"
+                android:inputType="textCapSentences|textMultiLine"/>
 
         </LinearLayout>
 
