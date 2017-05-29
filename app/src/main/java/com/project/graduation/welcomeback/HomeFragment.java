@@ -33,6 +33,8 @@ public class HomeFragment extends Fragment {
         // Create an adapter that knows which fragment should be shown on each page
         PagerAdapter myPagerAdapter = new PagerAdapter(getChildFragmentManager(),getContext());
         ViewPager viewPager = (ViewPager) result.findViewById(R.id.viewpager);
+        // num of page display on screen
+        viewPager.setOffscreenPageLimit(2);
         // Set the adapter onto the view pager
         viewPager.setAdapter(myPagerAdapter);
         // Find the tab layout that shows the tabs
