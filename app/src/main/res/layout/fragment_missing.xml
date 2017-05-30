@@ -2,15 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.graduation.welcomeback.MissingFragment">
+    tools:context="com.project.graduation.welcomeback.Home.MissingFragment"
+    android:id="@+id/missing_fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/missing_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="missing" />
+        android:scrollbars="vertical"/>
+
+    <TextView
+        android:id="@+id/missing_error_empty_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/missing_floating_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"

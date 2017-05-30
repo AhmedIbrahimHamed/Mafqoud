@@ -2,15 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.graduation.welcomeback.SuspectsFragment">
+    tools:context="com.project.graduation.welcomeback.Home.SuspectsFragment"
+    android:id="@+id/suspects_fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/suspect_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="suspects" />
+        android:scrollbars="vertical"/>
+
+    <TextView
+        android:id="@+id/suspect_error_empty_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/suspect_floating_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"

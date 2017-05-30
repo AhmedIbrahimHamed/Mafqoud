@@ -9,6 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.project.graduation.welcomeback.Home.GalleryFragment;
+import com.project.graduation.welcomeback.Home.MissingFragment;
+import com.project.graduation.welcomeback.Home.SuspectsFragment;
+
 /**
  * this class represent the adapter hold the fragments.
  */

@@ -1,13 +1,64 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.graduation.welcomeback.GalleryFragment">
+    android:orientation="vertical"
+    tools:context="com.project.graduation.welcomeback.Home.GalleryFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/gallery_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="gallery" />
+        android:scrollbars="vertical"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/gallery_error_empty_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/gallery_fragment_margin_top"
+        android:layout_marginBottom="@dimen/gallery_fragment_margin_bottom">
+
+        <Switch
+            android:id="@+id/gallery_switch_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:shadowColor="@color/buttonTextColorBlue"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/gallery_fragment_switch_margin_left_right"
+            android:layout_marginRight="@dimen/gallery_fragment_switch_margin_left_right"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/gallery_switch_button"
+            android:text="@string/gallery_fragment_switch_missing_text"
+            android:textSize="@dimen/gallery_fragment_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/gallery_switch_button"
+            android:text="@string/gallery_fragment_switch_suspects_text"
+            android:textSize="@dimen/gallery_fragment_text_size"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

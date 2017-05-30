@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        tools:context="com.example.android.form.MainActivity">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- First Row -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_second_step_marginLeft"
+                android:layout_marginTop="@dimen/fragment_second_step_marginTop"
+                android:text="@string/location_text"
+                android:textSize="@dimen/fragment_first_step_gender_textSize"/>
+
+            <EditText
+                android:id="@+id/suspect_step2_location_editText"
+                android:layout_width="@dimen/fragment_second_step_width"
+                android:layout_height="@dimen/fragment_second_step_editText_height"
+                android:layout_marginTop="@dimen/fragment_second_step_marginTop"
+                android:hint="@string/location_hint"
+                android:inputType="textCapSentences|textMultiLine"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/suspect_step2_moreInfo_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_second_step_marginLeft"
+                android:layout_marginTop="@dimen/fragment_second_step_marginTop"
+                android:text="@string/more_info_text"
+                android:textSize="@dimen/fragment_first_step_gender_textSize"/>
+
+            <EditText
+                android:id="@+id/suspect_step2_moreInfo_editText"
+                android:layout_width="@dimen/fragment_first_step_width"
+                android:layout_height="@dimen/fragment_second_step_editText_height"
+                android:layout_marginTop="@dimen/fragment_second_step_marginTop"
+                android:hint="@string/more_info_hint"
+                android:inputType="textCapSentences|textMultiLine" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_second_step_marginLeft"
+                android:layout_marginTop="@dimen/fragment_second_step_marginTop"
+                android:text="@string/contact_info_text"
+                android:textSize="@dimen/fragment_first_step_gender_textSize"/>
+
+            <EditText
+                android:id="@+id/suspect_step2_contact_info_editText"
+                android:layout_width="@dimen/fragment_second_step_width"
+                android:layout_height="@dimen/fragment_second_step_marginTop"
+                android:layout_marginLeft="@dimen/fragment_first_step_editText_marginLeft"
+                android:layout_marginTop="@dimen/fragment_first_step_marginTop"
+                android:hint="@string/contact_info_hint"
+                android:inputType="textCapSentences|textMultiLine"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
