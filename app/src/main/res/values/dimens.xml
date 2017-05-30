@@ -12,6 +12,10 @@
     <dimen name="sign_edges_left_and_right_padding">40dp</dimen>
     <dimen name="sign_edges_top_and_bottom_padding">30dp</dimen>
 
+    <!-- Contact us dimens -->
+    <dimen name="contact_us_padding">16dp</dimen>
+    <dimen name="contact_us_edit_text_top_margin">8dp</dimen>
+
     <!--<dimen name="logo_height_spacing">100dp</dimen>-->
     <!--<dimen name="logo_width_spacing">100dp</dimen>-->
     <!--<dimen name="left_margin_username_password_sign_in">40dp</dimen>-->

@@ -11,4 +11,7 @@
     <color name="buttonBackgroundColorBlue">#3F51B5</color>
     <color name="buttonTextColorWhite">#FFFFFF</color>
     <color name="buttonTextColorBlue">#3F51B5</color>
+    <!-- Contact us colors -->
+    <color name="textColorBlack">#000000</color>
+    <!--<color name="editTextColorBackgroundGray">#DCDCDC</color>-->
 </resources>

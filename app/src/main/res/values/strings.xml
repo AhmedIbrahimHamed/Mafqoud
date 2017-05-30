@@ -17,4 +17,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_help">HelpActivity</string>
 
+    <!--Contact us Strings-->
+    <string name="contact_us_description">We are very happy to hear your feedback.</string>
+
 </resources>

@@ -1,16 +1,60 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/contact_us_padding"
     tools:context="com.project.graduation.welcomeback.ContactUsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Contact Us"
-        android:textAppearance="?android:textAppearanceLarge"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"
+            android:text="@string/contact_us_description"
+            android:textColor="@color/colorPrimary" />
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/contact_us_name"
+            style="@style/editTextWidthAndHeight"
+            android:hint="Enter Full Name.."
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/contact_us_mail"
+            style="@style/editTextWidthAndHeight"
+            android:hint="Add a valid email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/contact_us_phone"
+            style="@style/editTextWidthAndHeight"
+            android:hint="Add your Numper"
+            android:maxLength="11"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/contact_us_message"
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="@dimen/contact_us_edit_text_top_margin"
+            android:hint="write something to us ..."
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLength="250" />
+
+        <Button
+            android:id="@+id/contact_us_submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:background="@color/buttonBackgroundColorBlue"
+            android:textColor="@color/buttonTextColorWhite"
+            android:textSize="16sp"
+            android:text="Submit" />
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+</LinearLayout>
