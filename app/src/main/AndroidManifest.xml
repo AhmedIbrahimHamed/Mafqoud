@@ -45,9 +45,14 @@
         <activity
             android:name=".Home.SuspectStepper.ReportSuspectStepper"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Home.ReportDetailsActivity"
+        <activity
+            android:name=".Home.ReportDetailsActivity"
+            android:label="@string/report_details_activity_label"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".NotificationActivity"
+            android:label="Notification"
             android:theme="@style/AppTheme"
-            android:label="@string/report_details_activity_label"></activity>
+            />
     </application>
 
 </manifest>

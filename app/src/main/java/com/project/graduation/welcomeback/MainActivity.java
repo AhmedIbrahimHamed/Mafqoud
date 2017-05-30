@@ -1,5 +1,6 @@
 package com.project.graduation.welcomeback;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -108,8 +109,9 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_notification:
-                FragmentTransaction notificationTransaction = mFragmentManager.beginTransaction();
-                notificationTransaction.replace(R.id.containerView, new NotificationFragment()).commit();
+                //todo add intent
+                Intent notificationIntent = new Intent(this, NotificationActivity.class);
+                startActivity(notificationIntent);
                 setTitle("Notification");
                 break;
             case R.id.nav_help:

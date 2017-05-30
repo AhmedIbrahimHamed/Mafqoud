@@ -127,7 +127,7 @@ public class Utilities {
                                         .setValue(localNotification);
 
                                 PendingIntent pi = PendingIntent.getActivity(context, 0,
-                                        new Intent(context, NotificationFragment.class), 0);
+                                        new Intent(context, NotificationActivity.class), 0);
 
                                 Notification notification = new NotificationCompat.Builder(context)
                                         .setContentTitle("Matched")
