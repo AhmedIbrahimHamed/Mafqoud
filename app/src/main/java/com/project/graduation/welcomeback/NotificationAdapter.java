@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.firebase.client.core.Repo;
+import com.project.graduation.welcomeback.Home.Data.Report;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,11 +24,10 @@ import java.util.List;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder> {
 
-    private List<String> mNotificationList ;
+    private List<Report> mNotificationList ;
 
-    public NotificationAdapter(List<String> mNotificationList) {
+    public NotificationAdapter() {
         this.mNotificationList = new ArrayList<>();
-
     }
 
     @Override
@@ -40,14 +42,19 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     @Override
     public void onBindViewHolder(NotificationViewHolder holder, int position) {
+        //TODO : Add your code ya muhammad :D
 
-        holder.notificationText.setText(mNotificationList.get(position));
 
     }
 
     @Override
     public int getItemCount() {
         return mNotificationList.size();
+    }
+
+    public void addReport(Report report){
+        mNotificationList.add(report);
+        notifyDataSetChanged();
     }
 
 

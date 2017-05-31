@@ -88,6 +88,7 @@ public class Utilities {
 
 
     public static void recognizeInLostGallery(final Context context, final String photoUrl, final String report) {
+        final Intent notificationIntent = new Intent(context,NotificationActivity.class);
         try {
             mKairosRef = new Kairos();
             mKairosRef.setAuthentication(context, KAIROS_API_ID, KAIROS_API_KEY);
@@ -111,7 +112,6 @@ public class Utilities {
 
                                 //get first key i.e. imageID in jsonObject
 
-
                                 String imageID = firstCandidateJSONObject.getString("subject_id");
                                 Log.i("match", imageID);
                                 //TODO: what happend in
@@ -126,8 +126,8 @@ public class Utilities {
                                         .push()
                                         .setValue(localNotification);
 
-                                PendingIntent pi = PendingIntent.getActivity(context, 0,
-                                        new Intent(context, NotificationActivity.class), 0);
+                                final PendingIntent pi = PendingIntent.getActivity(context, 0,
+                                        notificationIntent, 0);
 
                                 Notification notification = new NotificationCompat.Builder(context)
                                         .setContentTitle("Matched")
