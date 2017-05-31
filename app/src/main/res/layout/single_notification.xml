@@ -21,18 +21,62 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:padding="10dp">
-
-            <TextView
-                android:id="@+id/notification_text"
-                android:textAppearance="?android:textAppearanceMedium"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="2"
-                tools:text="Notification Message " />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/person_image"
+                    android:layout_gravity="end"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#FF000000"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/name"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    tools:text="Muhammad Attia " />
+                <TextView
+                    android:id="@+id/age"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    tools:text="21 " />
+                <TextView
+                    android:id="@+id/gender"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    tools:text="Male " />
+                <TextView
+                    android:id="@+id/location"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    tools:text="Cairo " />
+            </LinearLayout>
+
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
