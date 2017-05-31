@@ -21,7 +21,7 @@ public class User {
 
     private List<String> mMissingReportsRefrences = new ArrayList<>(); // the user's missings reports refrences that s/he made.
     private List<String> mSuspectsReportsRefrences = new ArrayList<>(); // the user's suspects reports refrences that s/he made.
-    private List<String> mNotifications = new ArrayList<>();
+    private List<LocalNotification> mNotifications = new ArrayList<>();
 
     public User() {
 
@@ -34,7 +34,7 @@ public class User {
      * @param suspectsReportsRefrences the missing reports references that current user made.
      **/
     public User(String name, List<String> missingReportsRefrences,
-                List<String> suspectsReportsRefrences, List<String> notifications) {
+                List<String> suspectsReportsRefrences, List<LocalNotification> notifications) {
         mName = name;
 
         mMissingReportsRefrences = missingReportsRefrences;
@@ -60,10 +60,14 @@ public class User {
     }
 
     public List<String> getmNotifications() {
-        return mNotifications;
+        List<String> notifications = new ArrayList<>();
+        for (LocalNotification localNotification : mNotifications) {
+            notifications.add(localNotification.getmRef());
+        }
+        return notifications;
     }
 
-    public void setmNotifications(List<String> mNotifications) {
+    public void setmNotifications(List<LocalNotification> mNotifications) {
         this.mNotifications = mNotifications;
     }
 
