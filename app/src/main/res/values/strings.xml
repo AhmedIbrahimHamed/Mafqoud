@@ -106,4 +106,9 @@
     <string name="gallery_fragment_switch_suspects_text">Suspects</string>
     <string name="gallery_fragment_switch_missing_text">Missing</string>
 
+    <!--User Galleries(fragment_missing and fragment_suspect) strings-->
+    <string name="user_gallery_item_name">Name :</string>
+    <string name="user_gallery_item_age">Age :</string>
+    <string name="user_gallery_item_gender">Gender :</string>
+
 </resources>

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +45,7 @@ public class SuspectsFragment extends Fragment {
 
     private RecyclerView mRecyclerView;                 //Recycler view for photos in galleries.
 
-    private GalleriesAdapter mAdapter;                  //Adapter for the photos recycler view.
+    private UserGalleriesAdapter mAdapter;              //Adapter for the user galleries recycler view.
 
     private ArrayList<Report> mSuspectsReports;         //List of the user's suspect reporters.
 
@@ -71,16 +72,11 @@ public class SuspectsFragment extends Fragment {
 
         mSuspectsReports = new ArrayList<>();
 
-        //Show 3 aligning photos when orientation is portrait and 4 photos when in landscape
-        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            layoutManager = new GridLayoutManager(getContext(), 3);
-        } else {
-            layoutManager = new GridLayoutManager(getContext(), 4);
-        }
+        layoutManager = new LinearLayoutManager(getContext());
 
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
-        mAdapter = new GalleriesAdapter(getContext());
+        mAdapter = new UserGalleriesAdapter(getContext());
         mRecyclerView.setAdapter(mAdapter);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -155,8 +151,7 @@ public class SuspectsFragment extends Fragment {
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             Report report = dataSnapshot.getValue(Report.class);
                             mSuspectsReports.add(report);       //Adding the report to the list
-                            String photo = report.getPhoto();
-                            mAdapter.addPhotosUrl(photo);       //Adding the report photo to the adapter
+                            mAdapter.addReport(report);         //passing the reports to the adapter
                         }
 
                         @Override

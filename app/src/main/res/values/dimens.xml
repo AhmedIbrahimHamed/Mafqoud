@@ -51,4 +51,11 @@
     <dimen name="gallery_fragment_margin_bottom">24dp</dimen>
     <dimen name="gallery_fragment_text_size">20sp</dimen>
 
+    <!--User Galleries(fragment_missing and fragment_suspect) dimens-->
+    <dimen name="user_galleries_padding_left_right_bottom">16dp</dimen>
+    <dimen name="user_gallery_item_padding_top">16dp</dimen>
+    <dimen name="user_gallery_item_text_padding_top">8dp</dimen>
+    <dimen name="user_gallery_item_image_padding_right">8dp</dimen>
+    <dimen name="user_gallery_item_text_size">20dp</dimen>
+
 </resources>

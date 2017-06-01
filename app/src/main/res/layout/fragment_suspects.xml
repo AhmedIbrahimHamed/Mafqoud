@@ -2,6 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="@dimen/user_galleries_padding_left_right_bottom"
+    android:paddingRight="@dimen/user_galleries_padding_left_right_bottom"
+    android:paddingBottom="@dimen/user_galleries_padding_left_right_bottom"
     tools:context="com.project.graduation.welcomeback.Home.SuspectsFragment"
     android:id="@+id/suspects_fragment">
 

@@ -43,6 +43,11 @@
         <item name="android:layout_marginBottom">8dp</item>
     </style>
 
+    <style name="userGalleryItemTextStyle">
+        <item name="android:paddingTop">@dimen/user_gallery_item_text_padding_top</item>
+        <item name="android:textSize">@dimen/user_gallery_item_text_size</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

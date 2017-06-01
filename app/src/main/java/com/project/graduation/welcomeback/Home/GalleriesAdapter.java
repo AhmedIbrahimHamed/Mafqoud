@@ -61,8 +61,6 @@ public class GalleriesAdapter extends RecyclerView.Adapter<GalleriesAdapter.Phot
 
     @Override
     public int getItemCount() {
-        if (photosUrl == null)
-            return 0;
         return photosUrl.size();
     }
 
