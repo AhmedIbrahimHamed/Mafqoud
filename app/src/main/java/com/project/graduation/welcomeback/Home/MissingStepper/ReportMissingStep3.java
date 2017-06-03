@@ -3,10 +3,12 @@ package com.project.graduation.welcomeback.Home.MissingStepper;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +35,10 @@ import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import id.zelory.compressor.Compressor;
 
 import static android.R.attr.key;
 import static android.app.Activity.RESULT_OK;
