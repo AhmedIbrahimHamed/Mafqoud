@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.firebase.client.core.Repo;
 import com.project.graduation.welcomeback.Home.Data.Report;
+import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,8 +28,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     private List<Report> mNotificationList ;
 
-    public NotificationAdapter() {
+    private Context mContext;
+
+    public NotificationAdapter(Context context) {
         this.mNotificationList = new ArrayList<>();
+        this.mContext = context;
     }
 
     @Override
@@ -45,12 +49,14 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     public void onBindViewHolder(NotificationViewHolder holder, int position) {
         //TODO : Add your code ya muhammad :D
 
+        Picasso.with(mContext)
+                .load(mNotificationList.get(position).getPhoto())
+                .into(holder.photo);
+
         holder.name.setText(mNotificationList.get(position).getName());
         holder.age.setText(mNotificationList.get(position).getAge());
         holder.gender.setText(mNotificationList.get(position).getGender());
         holder.location.setText(mNotificationList.get(position).getLocation());
-        holder.photo.setImageResource(Integer.valueOf(mNotificationList.get(position).getPhoto()));
-
 
     }
 

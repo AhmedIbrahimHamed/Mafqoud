@@ -56,7 +56,7 @@ public class NotificationActivity extends AppCompatActivity {
         notificationRecyclerView.setEmptyView(emptyView);
 
         notificationArrayList = new ArrayList<>();
-        mAdapter = new NotificationAdapter();
+        mAdapter = new NotificationAdapter(getApplicationContext());
         notificationRecyclerView.setAdapter(mAdapter);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -65,40 +65,56 @@ public class NotificationActivity extends AppCompatActivity {
         mNotificationRef = mFirebaseDatabase.getReference().child("Users")
                 .child(userID).child("Notifications");
 
+        mNotificationRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                LocalNotification notification = dataSnapshot.getValue(LocalNotification.class);
+                if(notification == null){
+                    //TODO: Add a error textView.
+                }else {
+                    String strReportKey = notification.getmRef();
+                    mSuspectsReportsRef = mFirebaseDatabase.getReference().child("reports")
+                            .child("suspect_reports").child(strReportKey);
+
+                    mSuspectsReportsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Report report = dataSnapshot.getValue(Report.class);
+                            notificationArrayList.add(report);      //adding the report to my reports list.
+                            mAdapter.addReport(report);
+                            Log.v("reportPhoto", report.getPhoto());
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
-        mNotificationRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                     @Override
-                     public void onDataChange(DataSnapshot dataSnapshot) {
-                         String strReportKey = dataSnapshot.getValue(String.class);
-                         if (strReportKey == null) {
-                             //TODO : Add error textView saying you have no notifications.
-                         } else {
-                             mSuspectsReportsRef = mFirebaseDatabase.getReference().child("reports")
-                                     .child("suspect_reports").child(strReportKey);
-
-                             mSuspectsReportsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                 @Override
-                                 public void onDataChange(DataSnapshot dataSnapshot) {
-                                     Report report = dataSnapshot.getValue(Report.class);
-                                     notificationArrayList.add(report);    //adding the report to my reports list.
-                                     Log.v("reportPhoto", report.getPhoto());
-                                 }
-
-                                 @Override
-                                 public void onCancelled(DatabaseError databaseError) {
-
-                                 }
-                             });
-                         }
-                     }
-
-                     @Override
-                     public void onCancelled(DatabaseError databaseError) {
-
-                     }
-                 }
-                );
         notificationRecyclerView.addOnItemTouchListener(new RecyclerItemClickHandler(getApplicationContext(), notificationRecyclerView, new RecyclerItemClickHandler.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
