@@ -22,27 +22,21 @@ import com.project.graduation.welcomeback.Home.RecyclerItemClickHandler;
 import com.project.graduation.welcomeback.Home.ReportDetailsActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import static android.media.CamcorderProfile.get;
 
 public class NotificationActivity extends AppCompatActivity {
 
-<<<<<<< HEAD
     private ArrayList<Report> notificationArrayList;
     private EmptyRecyclerView notificationRecyclerView;
-=======
-    private List<Report> notificationArrayList;
-    private RecyclerView notificationRecyclerView;
->>>>>>> 88154307dc0fb224688d6e1ba236f608c88396a7
     private NotificationAdapter mAdapter;
 
     private FirebaseAuth mFirebaseAuth;                 //Used to get current user.
 
     private FirebaseDatabase mFirebaseDatabase;         //Firebase instance.
 
-    private DatabaseReference mNotificationsRef;                 //Used to get the notification key of suspects reports.
+    private DatabaseReference mNotificationRef;         //Used to get the notification key of suspects reports.
 
     private DatabaseReference mSuspectsReportsRef;      //Used to get the suspect report report.
 
@@ -62,64 +56,49 @@ public class NotificationActivity extends AppCompatActivity {
         notificationRecyclerView.setEmptyView(emptyView);
 
         notificationArrayList = new ArrayList<>();
-<<<<<<< HEAD
         mAdapter = new NotificationAdapter();
-=======
-        notificationRecyclerView = (RecyclerView) findViewById(R.id.list);
-        notificationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new NotificationAdapter(getApplicationContext());
->>>>>>> 88154307dc0fb224688d6e1ba236f608c88396a7
         notificationRecyclerView.setAdapter(mAdapter);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseAuth = FirebaseAuth.getInstance();
         String userID = mFirebaseAuth.getCurrentUser().getUid();
-        mNotificationsRef = mFirebaseDatabase.getReference().child("Users")
+        mNotificationRef = mFirebaseDatabase.getReference().child("Users")
                 .child(userID).child("Notifications");
 
-        mNotificationsRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                LocalNotification mNotification = dataSnapshot.getValue(LocalNotification.class);
-                String reportKeyRef = mNotification.getmRef();
-
-                mSuspectsReportsRef = mFirebaseDatabase.getReference()
-                        .child("reports").child("suspect_reports").child(reportKeyRef);
-
-                mSuspectsReportsRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Report report = dataSnapshot.getValue(Report.class);
-                        notificationArrayList.add(report);
-                        mAdapter.addReport(report);
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
 
 
+        mNotificationRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                     @Override
+                     public void onDataChange(DataSnapshot dataSnapshot) {
+                         String strReportKey = dataSnapshot.getValue(String.class);
+                         if (strReportKey == null) {
+                             //TODO : Add error textView saying you have no notifications.
+                         } else {
+                             mSuspectsReportsRef = mFirebaseDatabase.getReference().child("reports")
+                                     .child("suspect_reports").child(strReportKey);
+
+                             mSuspectsReportsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                 @Override
+                                 public void onDataChange(DataSnapshot dataSnapshot) {
+                                     Report report = dataSnapshot.getValue(Report.class);
+                                     notificationArrayList.add(report);    //adding the report to my reports list.
+                                     Log.v("reportPhoto", report.getPhoto());
+                                 }
+
+                                 @Override
+                                 public void onCancelled(DatabaseError databaseError) {
+
+                                 }
+                             });
+                         }
+                     }
+
+                     @Override
+                     public void onCancelled(DatabaseError databaseError) {
+
+                     }
+                 }
+                );
         notificationRecyclerView.addOnItemTouchListener(new RecyclerItemClickHandler(getApplicationContext(), notificationRecyclerView, new RecyclerItemClickHandler.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
