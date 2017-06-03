@@ -32,30 +32,32 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //noinspection GradleCompatible
+    // Dependencies for Firebase
+    //dependency for stepper
+    //for facebook login
+    //dependency for picasso
+    // to make circle image
+    //to make about US screen
+    
+
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    // Dependencies for Firebase
     compile 'com.google.firebase:firebase-core:10.2.1'
     compile 'com.google.firebase:firebase-database:10.2.1'
     compile 'com.google.firebase:firebase-auth:10.2.1'
     compile 'com.google.firebase:firebase-storage:10.2.1'
     compile 'com.google.android.gms:play-services-auth:10.2.1'
     compile 'com.firebase:firebase-client-android:2.5.2'
-    //dependency for stepper
     compile 'com.stepstone.stepper:material-stepper:3.2.1'
-    //for facebook login
     compile 'com.facebook.android:facebook-android-sdk:4.22.0'
-    //dependency for picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.evernote:android-job:1.1.7'
-    // to make circle image
     compile 'de.hdodenhof:circleimageview:2.1.0'
-
-
-
+    compile 'com.github.medyo:android-about-page:1.2.1'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
 android {

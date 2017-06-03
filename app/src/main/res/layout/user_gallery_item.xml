@@ -1,41 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/user_gallery_item_padding_top"
-    android:orientation="horizontal">
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="8dp"
 
-    <ImageView
-        android:id="@+id/user_gallery_photo_Image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingRight="@dimen/user_gallery_item_image_padding_right"/>
+    >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardBackgroundColor="#E8F5E9"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="16dp">
 
-        <TextView
-            android:id="@+id/user_gallery_name_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/userGalleryItemTextStyle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/user_gallery_age_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/userGalleryItemTextStyle" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
-        <TextView
-            android:id="@+id/user_gallery_gender_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/userGalleryItemTextStyle" />
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/user_gallery_photo_Image_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="end"
+                    app:civ_border_color="@color/ms_white"
+                    app:civ_border_width="1dp" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/user_gallery_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    tools:text="Muhammad Attia " />
 
+                <TextView
+                    android:id="@+id/user_gallery_age_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textStyle="bold|italic"
+                    tools:text="21 " />
+
+                <TextView
+                    android:id="@+id/user_gallery_gender_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textStyle="normal|italic"
+                    tools:text="Male " />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

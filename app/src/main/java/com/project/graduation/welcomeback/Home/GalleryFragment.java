@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.project.graduation.welcomeback.EmptyRecyclerView;
 import com.project.graduation.welcomeback.Home.Data.Report;
 import com.project.graduation.welcomeback.R;
 
@@ -50,7 +52,7 @@ public class GalleryFragment extends Fragment {
 
     private Switch mSwitchButton;                       //Used to change between suspects/missing reporters.
 
-    private RecyclerView mRecyclerView;                 //Recycler view for photos in galleries.
+    private EmptyRecyclerView mRecyclerView;                 //Recycler view for photos in galleries.
 
     private ArrayList<Report> mSelectedReports;          //List for the missing reports.
 
@@ -73,20 +75,28 @@ public class GalleryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
-        mErrorMassage = (TextView) view.findViewById(R.id.gallery_error_empty_recycler);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.gallery_RecyclerView);
+        //handel empty view
+        mRecyclerView =
+                (EmptyRecyclerView)view.findViewById(R.id.gallery_RecyclerView);
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),3));
+
+        } else {
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),4));
+
+        }
+
+        // Fetch the empty view from the layout and set it on the new recycler view
+        View emptyView = view.findViewById(R.id.gallery_error_empty_recycler);
+        mRecyclerView.setEmptyView(emptyView);
+
         mSwitchButton = (Switch) view.findViewById(R.id.gallery_switch_button);
 
         mSelectedReports = new ArrayList<>();
 
         //Show 3 aligning photos when orientation is portrait and 4 when landscape
-        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            layoutManager = new GridLayoutManager(getContext(), 3);
-        } else {
-            layoutManager = new GridLayoutManager(getContext(), 4);
-        }
 
-        mRecyclerView.setLayoutManager(layoutManager);
+
         mRecyclerView.setHasFixedSize(true);
         mAdapter = new GalleriesAdapter(getContext());
         mRecyclerView.setAdapter(mAdapter);

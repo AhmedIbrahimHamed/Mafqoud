@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/user_galleries_padding_left_right_bottom"
+    android:paddingRight="@dimen/user_galleries_padding_left_right_bottom"
+    android:paddingBottom="@dimen/user_galleries_padding_left_right_bottom"
+    tools:context="com.project.graduation.welcomeback.NotificationActivity"
+    >
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list"
+    <!-- Handel empty view  -->
+
+    <com.project.graduation.welcomeback.EmptyRecyclerView
+        android:id="@+id/gallery_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
+        android:scrollbars="vertical"/>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/notification_error_empty_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You don\' have any Notification Now "
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_marginBottom="5dp"
+            />
+    </LinearLayout>
+
+</FrameLayout>

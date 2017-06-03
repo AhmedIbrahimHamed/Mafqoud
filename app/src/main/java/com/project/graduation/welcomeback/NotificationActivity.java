@@ -29,7 +29,7 @@ import static android.media.CamcorderProfile.get;
 public class NotificationActivity extends AppCompatActivity {
 
     private ArrayList<Report> notificationArrayList;
-    private RecyclerView notificationRecyclerView;
+    private EmptyRecyclerView notificationRecyclerView;
     private NotificationAdapter mAdapter;
 
     private FirebaseAuth mFirebaseAuth;                 //Used to get current user.
@@ -45,9 +45,17 @@ public class NotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
 
+
+        //handel empty view
+        notificationRecyclerView =
+                (EmptyRecyclerView)findViewById(R.id.gallery_RecyclerView);
+        notificationRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        // Fetch the empty view from the layout and set it on the new recycler view
+        View emptyView = findViewById(R.id.notification_error_empty_recycler);
+        notificationRecyclerView.setEmptyView(emptyView);
+
         notificationArrayList = new ArrayList<>();
-        notificationRecyclerView = (RecyclerView) findViewById(R.id.list);
-        notificationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new NotificationAdapter();
         notificationRecyclerView.setAdapter(mAdapter);
 

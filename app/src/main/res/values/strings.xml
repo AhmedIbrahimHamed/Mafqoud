@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Welcome Back</string>
+    <string name="app_name">Mafqoud</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -24,9 +24,9 @@
     <!--Log in strings -->
     <string name="username">Name</string>
     <string name="password">Password</string>
-    <string name="forget_password">Forget Password?</string>
-    <string name="new_user">New User?</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="forget_password">Forget your Password?</string>
+    <string name="new_user"> New User? </string>
+    <string name="sign_up"> Sign Up</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in">Sign In</string>
     <string name="email">Email</string>
@@ -100,7 +100,7 @@
     <string name="help_better_result">For better results</string>
     <string name="first_result">1. take image from some distance</string>
     <string name="second_result">2. there shouldn\'t be more then one face in the image </string>
-    <string name="how_use_welcome_back">How use Welcome Back?</string>
+    <string name="how_use_mafqoud">How use Mafqoud App ?</string>
 
     <!--Gallery_fragment_strings-->
     <string name="gallery_fragment_switch_suspects_text">Suspects</string>
@@ -110,5 +110,14 @@
     <string name="user_gallery_item_name">Name :</string>
     <string name="user_gallery_item_age">Age :</string>
     <string name="user_gallery_item_gender">Gender :</string>
+
+    <!-- CopyRight -->
+    <string name="copy_right">Copyrights © %1$d</string>
+    <!-- about us -->
+    <string name="about_us_description">This is an Android app to Identify Missing People using face detection and recognition techniques
+        That is done by allow Users to report their Missing and users who volunteer to provide us with pictures and information
+        of people that they suspect they are the ones we are looking for such as: lost children, mentally disabled, fugitives
+        or even abducted. through their account.
+        If the any of the Missing Reports matches with any of the Suspect Reports then both of the user are notified.</string>
 
 </resources>

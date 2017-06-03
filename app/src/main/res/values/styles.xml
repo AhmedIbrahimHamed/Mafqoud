@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorControlHighlight">@color/colorPrimary</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -25,22 +26,21 @@
         <item name="android:paddingRight">@dimen/sign_edges_left_and_right_padding</item>
         <item name="android:paddingTop">@dimen/sign_edges_top_and_bottom_padding</item>
         <item name="android:paddingBottom">@dimen/sign_edges_top_and_bottom_padding</item>
-        <item name="android:background">@color/activityBackgroundColorBlue</item>
+        <item name="android:background">@color/activityBackgroundColorGreen</item>
     </style>
 
-    <style name="ButtonColorBlue">
-        <item name="android:background">@color/buttonBackgroundColorBlue</item>
+    <style name="ButtonColorGreen">
+        <item name="android:background">@color/buttonBackgroundColorGreen</item>
         <item name="android:textColor">@color/buttonTextColorWhite</item>
     </style>
 
     <style name="ButtonColorWhite">
         <item name="android:background">@color/buttonBackgroundColorWhite</item>
-        <item name="android:textColor">@color/buttonTextColorBlue</item>
+        <item name="android:textColor">@color/buttonTextColorGreen</item>
     </style>
 
     <style name="ReportDetailsTextStyle">
-        <item name="android:textSize">24sp</item>
-        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
     </style>
 
     <style name="userGalleryItemTextStyle">

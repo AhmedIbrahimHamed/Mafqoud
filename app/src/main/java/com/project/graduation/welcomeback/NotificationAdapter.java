@@ -51,6 +51,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.location.setText(mNotificationList.get(position).getLocation());
         holder.photo.setImageResource(Integer.valueOf(mNotificationList.get(position).getPhoto()));
 
+
     }
 
     @Override
@@ -81,7 +82,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             gender = (TextView)itemView.findViewById(R.id.gender);
             location = (TextView)itemView.findViewById(R.id.location);
             photo =(ImageView)itemView.findViewById(R.id.person_image);
-            
+
         }
 
     }

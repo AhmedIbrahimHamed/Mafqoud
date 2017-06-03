@@ -1,6 +1,5 @@
 package com.project.graduation.welcomeback;
 
-import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -11,25 +10,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.HeaderViewListAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.evernote.android.job.JobManager;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import static android.R.attr.id;
-import static android.R.attr.name;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -119,10 +106,11 @@ public class MainActivity extends AppCompatActivity
                 helpTransaction.replace(R.id.containerView, new HelpFragment()).commit();
                 setTitle("Help");
                 break;
-            case R.id.nav_contact_us:
-                FragmentTransaction contactUsTransaction = mFragmentManager.beginTransaction();
-                contactUsTransaction.replace(R.id.containerView, new ContactUsFragment()).commit();
-                setTitle("Contact Us");
+            case R.id.nav_about_us:
+                Intent aboutIntent = new Intent(this, AboutUsActivity.class);
+                startActivity(aboutIntent);
+                setTitle("Notification");
+                setTitle("About Us");
                 break;
             case R.id.nav_logout:
                 mFirebaseAuth.signOut();

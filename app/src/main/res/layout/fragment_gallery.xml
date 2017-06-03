@@ -10,53 +10,67 @@
         android:layout_height="0dp"
         android:layout_weight="8">
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/gallery_RecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+        <!-- TODO: Update blank fragment layout -->
+        <com.project.graduation.welcomeback.EmptyRecyclerView
+            android:id="@+id/gallery_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
 
-    <TextView
-        android:id="@+id/gallery_error_empty_recycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="invisible"/>
+        <LinearLayout
+            android:id="@+id/gallery_error_empty_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:text="Gallery Is Empty "
+                android:textAppearance="?android:textAppearanceMedium" />
+
+        </LinearLayout>
 
     </FrameLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_marginBottom="@dimen/gallery_fragment_margin_bottom"
         android:layout_marginTop="@dimen/gallery_fragment_margin_top"
-        android:layout_marginBottom="@dimen/gallery_fragment_margin_bottom">
+        android:layout_weight="1">
 
         <Switch
             android:id="@+id/gallery_switch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleX="1.3"
-            android:scaleY="1.3"
-            android:shadowColor="@color/buttonTextColorBlue"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="@dimen/gallery_fragment_switch_margin_left_right"
-            android:layout_marginRight="@dimen/gallery_fragment_switch_margin_left_right"/>
+            android:layout_marginRight="@dimen/gallery_fragment_switch_margin_left_right"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:shadowColor="@color/buttonTextColorGreen" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/gallery_switch_button"
             android:text="@string/gallery_fragment_switch_missing_text"
-            android:textSize="@dimen/gallery_fragment_text_size" />
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/gallery_switch_button"
             android:text="@string/gallery_fragment_switch_suspects_text"
-            android:textSize="@dimen/gallery_fragment_text_size"/>
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

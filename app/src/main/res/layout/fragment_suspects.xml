@@ -8,24 +8,44 @@
     tools:context="com.project.graduation.welcomeback.Home.SuspectsFragment"
     android:id="@+id/suspects_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.RecyclerView
+    <!-- Handel empty view  -->
+
+    <com.project.graduation.welcomeback.EmptyRecyclerView
         android:id="@+id/suspect_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
 
-    <TextView
+    <LinearLayout
         android:id="@+id/suspect_error_empty_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Reports Available "
+            android:layout_gravity="center"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_marginBottom="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Start to add new one by click on + button  "
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold|italic"
+            />
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/suspect_floating_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
+        android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:clickable="true"
         android:src="@drawable/ic_add_white_24dp" />

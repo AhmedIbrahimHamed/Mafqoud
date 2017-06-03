@@ -32,6 +32,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,7 +56,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText mPassword;         //password edit text
 
     private Button mSignInButton;       //sign in button
-    private ImageView mGoogleSignIn;    //google sign in method
+    private SignInButton mGoogleSignIn;    //google sign in method
     private TextView mForgetPassword;  // for send forget password email
 
     private ProgressDialog mProgressDialog; // show information to user.
@@ -75,7 +76,7 @@ public class SignInActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.sign_in_email);
         mPassword = (EditText) findViewById(R.id.sign_in_password);
         mSignInButton = (Button) findViewById(R.id.sign_in_button);
-        mGoogleSignIn = (ImageView) findViewById(R.id.google_login_button);
+        mGoogleSignIn = (SignInButton) findViewById(R.id.google_login_button);
         mForgetPassword = (TextView) findViewById(R.id.forget_password);
 
         mSignUp = (TextView) findViewById(R.id.go_to_sign_up);
