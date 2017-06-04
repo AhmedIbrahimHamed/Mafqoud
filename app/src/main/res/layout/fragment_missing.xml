@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Reports Available "
+        android:text="@string/no_reports_availablee"
         android:layout_gravity="center"
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_marginBottom="5dp"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Start to add new one by click on + button  "
+        android:text="@string/start_to_add_new_one_by_click_on_buttonn"
         android:textAppearance="?android:textAppearanceSmall"
         android:textStyle="bold|italic"
         />

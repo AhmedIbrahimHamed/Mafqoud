@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Mafqoud</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main" translatable="false">MainActivity</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
     <!-- fragments names-->
     <string name="gallery">Gallery</string>
@@ -14,12 +14,12 @@
     <string name="title_activity_navigation_drawer">Home</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_help">HelpActivity</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_help" translatable="false">HelpActivity</string>
 
     <!-- Facebook sign in -->
-    <string name="facebook_app_id">208120906357108</string>
-    <string name="fb_login_protocol_scheme">fb208120906357108</string>
+    <string name="facebook_app_id" translatable="false">208120906357108</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb208120906357108</string>
 
     <!--Log in strings -->
     <string name="username">Name</string>
@@ -34,7 +34,7 @@
     <string name="sign_up_with">Sign Up with</string>
     <string name="sign_in_with">Sign In with</string>
     <string name="email_already_used">This email is already used.</string>
-    <string name="email_verification_message_body">We send you and Email verify your account with it</string>
+    <string name="email_verification_message_body">We have send you a verification link please check it.</string>
     <string name="email_verification_message_title">Email verification.</string>
     <string name="email_verification_message_button">OK</string>
     <string name="password_valid">Password must contains minimum 8 characters</string>
@@ -56,7 +56,7 @@
     <string name="enter_email_here">Enter your Email Here</string>
     <string name="reset_password_title">Reset Password</string>
     <string name="reset_password_button">Reset</string>
-    <string name="title_activity_report_missing">ReportMissing</string>
+    <string name="title_activity_report_missing" translatable="false">ReportMissing</string>
 
     <!--Report Missing First step strings -->
     <string name="name_text">Name :</string>
@@ -96,7 +96,7 @@
     <string name="how_to_use_app">just upload the photo and few details of the person and our powerful face recognition API will find out the person
     if the person is already in our database or we will notify you once the person is found.</string>
     <string name="help_suspect">If you find someone and think that s/he is the missing person,</string>
-    <string name="help_upload">you can upload the photo on Welcome Back so that reunite the missing person to his/her dear ones.</string>
+    <string name="help_upload">you can upload the photo on Mafqoud so that you can reunite the missing person to his/her dear ones.</string>
     <string name="help_better_result">For better results</string>
     <string name="first_result">1. take image from some distance</string>
     <string name="second_result">2. there shouldn\'t be more then one face in the image </string>
@@ -112,12 +112,26 @@
     <string name="user_gallery_item_gender">Gender :</string>
 
     <!-- CopyRight -->
-    <string name="copy_right">Copyrights © %1$d</string>
+    <string name="copy_right" translatable="false">Copyrights © %1$d</string>
     <!-- about us -->
     <string name="about_us_description">This is an Android app to Identify Missing People using face detection and recognition techniques
         That is done by allow Users to report their Missing and users who volunteer to provide us with pictures and information
         of people that they suspect they are the ones we are looking for such as: lost children, mentally disabled, fugitives
         or even abducted. through their account.
         If the any of the Missing Reports matches with any of the Suspect Reports then both of the user are notified.</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="help">Help</string>
+    <string name="communicate">Communicate</string>
+    <string name="about_us">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="no_reports_available">No Reports Available</string>
+    <string name="you_don_have_any_notification_now">You don\'t have any Notification Now</string>
+    <string name="sign_up_s">Sign Up</string>
+    <string name="sign_in_s">Sign In</string>
+    <string name="gallery_is_empty">Gallery Is Empty</string>
+    <string name="no_reports_availablee">No Reports Available</string>
+    <string name="start_to_add_new_one_by_click_on_button">Start to add new one by click on + button</string>
+    <string name="start_to_add_new_one_by_click_on_buttonn">Start to add new one by click on + button</string>
 
 </resources>

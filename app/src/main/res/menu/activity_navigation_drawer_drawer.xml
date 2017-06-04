@@ -6,28 +6,28 @@
         <item
             android:id="@+id/nav_Home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="@string/home" />
 
         <item
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_add_alert_black_24dp"
-            android:title="Notification" />
+            android:title="@string/notification" />
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help_black_24dp"
-            android:title="Help" />
+            android:title="@string/help" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_about_us"
                 android:icon="@drawable/aboutus"
-                android:title="About Us" />
+                android:title="@string/about_us" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
-                android:title="Logout" />
+                android:title="@string/logout" />
 
         </menu>
     </item>

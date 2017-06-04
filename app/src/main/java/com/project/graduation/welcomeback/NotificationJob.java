@@ -74,6 +74,7 @@ public class NotificationJob extends Job {
                         );
 
 
+        Log.i("Job scheduller", "DONE");
         return Result.SUCCESS;
     }
 
