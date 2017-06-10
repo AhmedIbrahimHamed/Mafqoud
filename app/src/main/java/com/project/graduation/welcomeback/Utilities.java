@@ -51,7 +51,7 @@ public class Utilities {
 
     private static Kairos mKairosRef;
 
-    private final static String KAIROS_GALLERY = "MafqoudGallery";
+    private final static String KAIROS_GALLERY = "MafqoudProjectGallery";
     public static final String KAIROS_SELECTOR = "SETPOSE";
     public static final String KAIROS_MULTIPLE_FACES = "true";
     public static final String KAIROS_MIN_HEAD_SCALE = "0.125";
