@@ -57,8 +57,8 @@ public class Utilities {
     public static final String KAIROS_MIN_HEAD_SCALE = "0.125";
     public static final String KAIROS_MAX_RESULTS = "5";
     public static final String KAIROS_THRESHOLD = "0.70";
-    public static final String KAIROS_API_ID = "76f8b3c5";
-    public static final String KAIROS_API_KEY = "c9dcb07777b9954ff34106d333f9ce29";
+    public static final String KAIROS_API_ID = "c61cdce3";
+    public static final String KAIROS_API_KEY = "4398509fe7816f95d5f2e499adbaf576";
 
 
     public static void enrollImageToKairosFoundGallery(Context context, String photoUrl, String name) {
@@ -95,7 +95,7 @@ public class Utilities {
             mKairosRef.recognize(photoUrl, KAIROS_GALLERY, KAIROS_SELECTOR, KAIROS_THRESHOLD, KAIROS_MIN_HEAD_SCALE, KAIROS_MAX_RESULTS, new KairosListener() {
                 @Override
                 public void onSuccess(String s) {
-                    Log.d("done", s);
+                    Log.d("onSuccess1", s);
 
                     JSONObject rootNode = null;
                     try {
@@ -113,7 +113,7 @@ public class Utilities {
                                 //get first key i.e. imageID in jsonObject
 
                                 String imageID = firstCandidateJSONObject.getString("subject_id");
-                                Log.i("match", imageID);
+                                Log.i("foundMatch", imageID);
                                 //TODO: what happend in
 
                                 LocalNotification localNotification = new LocalNotification("-" + imageID);
@@ -169,7 +169,7 @@ public class Utilities {
                         }
 
                     } catch (JSONException e) {
-                        e.printStackTrace();
+                        Log.v("problemoooo",e.getMessage());
                     }
                 }
 
@@ -179,9 +179,9 @@ public class Utilities {
                 }
             });
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.i("jsoneee",e.getMessage());
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            Log.i("dsdsds",e.getMessage());
         }
     }
 }

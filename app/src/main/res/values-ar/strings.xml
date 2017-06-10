@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">مفقود</string>
     <string name="about_us">من نحن</string>
-    <string name="about_us_description"></string>
+    <string name="about_us_description">هذا التطبيق يقوم  بالتعرف علي الاشخاص المفقودين  باستخدام الكشف عن الوجه و تقنيات  التعرف , ويتم ذلك من خلال السماح للمستخدمين بالابلاغ عن المفقودين و المستخدمين المتطوعين  يقومون  بتزويدينا بالصور و المعلومات من الناس الذين يشكون انهم هم المفقودين الذين نتطلع اليهم مثل الطفل المفقود والمعاق ذهنيا  ,والهارب من منزله او المخطوف من خلال الحساب الخاص به اذا وجدنا ان اي من التقارير الخاصه بالمفقوديين تطابق اي من التقارير المتعرف عليها بعدها يتم ارسال اشعار للمستخدم يخبره عن عملية المطابقه</string>
     <string name="username">الأسم</string>
     <string name="user_gallery_item_name">الأسم:</string>
     <string name="user_gallery_item_gender">النوع:</string>
@@ -51,7 +51,7 @@
     <string name="name_text">الاسم :</string>
     <string name="new_user">مستخدم جديد؟</string>
     <string name="no_internet">غير متصل بالانترنت</string>
-    <string name="no_reports_available"></string>
+    <string name="no_reports_available">لا يوجد تقاريرالان</string>
     <string name="notification">الاشعارات</string>
     <string name="or">أو</string>
     <string name="password">كلمة السر</string>
@@ -59,4 +59,37 @@
     <string name="radio_female">انثي</string>
     <string name="radio_male">ذكر</string>
     <string name="you_don_have_any_notification_now">ليس لديك اي اشعارات الان</string>
+    <string name="register_dialog">تسجيل مستخدم جديد</string>
+    <string name="no_reports_availablee">لا يوجد تقاريرالان</string>
+    <string name="report_details_activity_label">تفاصيل التقرير</string>
+    <string name="report_details_contatct_info">معلومات الاتصال</string>
+    <string name="report_details_age">العمر</string>
+    <string name="report_details_gender">النوع :</string>
+    <string name="report_details_location">المكان :</string>
+    <string name="report_details_more_info">معلومات اضافية :</string>
+    <string name="report_details_unknown_field">غير معروف</string>
+    <string name="report_details_unknown_more_info">لا يوجد معلومات متاحة</string>
+    <string name="required">مطلوب</string>
+    <string name="resend_email">اعادة ارسال</string>
+    <string name="reset_password_button">اعادة تعيين</string>
+    <string name="reset_password_title">اعادة تعيين كلمة السر</string>
+    <string name="second_result">يجب ان لا يكون هناك اكثر من وجه واحد في الصورة</string>
+    <string name="send_Email_success">تم ارسال البريد الإلكتروني بنجاح</string>
+    <string name="send_email_failed">فشلت عملية ارسال البريد الالكترونى</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="sign_in_dialog">تسجيل الدخول</string>
+    <string name="sign_in_failed">فشلت عملية تسجيل الدخول</string>
+    <string name="sign_in_with">تسجيل الدخول بواسطه</string>
+    <string name="sign_in_s">تسجيل الدخول</string>
+    <string name="sign_up">الاشتراك</string>
+    <string name="sign_up_s">الاشتراك</string>
+    <string name="sign_up_with">الاشتراك بواسطة</string>
+    <string name="start_to_add_new_one_by_click_on_button">بدء باضافة تقرير جديد من خلال الضغط على زر +</string>
+    <string name="start_to_add_new_one_by_click_on_buttonn">بدء باضافة تقرير جديد من خلال الضغط على زر +</string>
+    <string name="step3_notes">ملاحظه :يجب ان لا تحتوى الصور على اكثر من وجه</string>
+    <string name="suspects">المتعرف عليهم</string>
+    <string name="usernamr_valid">يجب ان يحتوى اسم المستخدم على اكثر من  اربعه حروف</string>
+    <string name="vaild_email">من فضلك قم بادخال بريد الكترونى صحيح</string>
+    <string name="valid_username_characters">اسم المستخدم يحتوى فقط على الحروف الابجديه والارقام من 1 الى 9</string>
+    <string name="how_to_use_app">فقط قم برفع الصوره وبعض التفاصيل عن الشخص المفقود وسوف تقوم  برمجة واجهة التطبيقات الخاص بينا بايجاد اذا كان الشخص مسجل في قاعدة البيانات الخاصه بنا وسوف نقوم بارسال اشعار بذلك</string>
 </resources>

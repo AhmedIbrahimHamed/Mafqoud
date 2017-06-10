@@ -36,6 +36,8 @@ public class NotificationJob extends Job {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+        Log.i("hanb","started");
+
         FirebaseDatabase.getInstance().getReference().child("Users")
                 .child(user.getUid())
                 .addListenerForSingleValueEvent
@@ -74,7 +76,7 @@ public class NotificationJob extends Job {
                         );
 
 
-        Log.i("Job scheduller", "DONE");
+        Log.i("Job scheduler", "DONE");
         return Result.SUCCESS;
     }
 

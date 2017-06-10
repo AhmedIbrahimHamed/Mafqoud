@@ -38,7 +38,7 @@
     <string name="email_verification_message_title">Email verification.</string>
     <string name="email_verification_message_button">OK</string>
     <string name="password_valid">Password must contains minimum 8 characters</string>
-    <string name="vaild_email">Please Inter Valid Email</string>
+    <string name="vaild_email">Please Enter Valid Email</string>
     <string name="valid_username_characters">Username contains only a-z, A-z, 1-9 and underscore</string>
     <string name="usernamr_valid">Minimum username 4 characters</string>
     <string name="required">Required.</string>
